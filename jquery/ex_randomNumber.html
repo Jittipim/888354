@@ -1,0 +1,38 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+    $( document ).ready(function(){
+      var first = 0;
+      var second = 0;
+      var res = 0;
+      var ans = 0;
+      $("#Rad_num").click(function(){
+        first = Math.floor(Math.random() * 999)+ 0;
+        second = Math.floor(Math.random() * 999)+ 0;
+
+        $("#show").html(first+" + "+second+" = ");
+        res = first + second;
+      });
+      $("#Send").click(function(){
+        ans_R = $("#ans").val();
+        if(ans_R == res){
+          $("#Re").html("<span style='color:green;'>That's correct.</span>");
+        }else {
+          $("#Re").html("<span style='color:red;'>That's Wrong.</span>");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <center>
+    <h2>Ex-Randdom Number for Answer</h2><hr>
+    <button id="Rad_num">Randdom Number</button>
+    <br><br>
+    <span id="show"></span><input type="text" id="ans">
+    <button id="Send">Send Answer</button>
+    <br><br>
+    <p id="Re">Result: </p>
+</body>
+</html>
